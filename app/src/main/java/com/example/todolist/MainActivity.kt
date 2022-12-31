@@ -2,6 +2,8 @@ package com.example.todolist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.widget.AlertDialogLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -28,5 +30,14 @@ class MainActivity : AppCompatActivity() {
         btnDeleteDoneTodos.setOnClickListener {
             todoAdapter.deleteDoneTodos()
         }
+    }
+
+    override fun onResume() {
+        Toast.makeText(this, "Oh, glad you're back :)", Toast.LENGTH_LONG).show()
+        super.onResume()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }
